@@ -3,6 +3,12 @@
  - favorite: PWN, REV
 
 # ToDo bins
+## hack-zonectf2019
+- pwn2
+where to rop?
+- pwn3
+- shellcoding
+seccomp
 ## wpictf2019
 - secureshell  
   what is the seed of UUID generator ?
