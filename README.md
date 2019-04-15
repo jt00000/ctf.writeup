@@ -27,6 +27,6 @@ seccomp chall
 - Plaid Party Planning III  
 so hard to understand
 - SPlaid Bitch  
-almost untouch
+almost no touch
 
 
