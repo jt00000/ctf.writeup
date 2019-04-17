@@ -9,11 +9,7 @@ where to rop?
 - pwn3
 - shellcoding
 seccomp
-## wpictf2019
-- secureshell  
-  what is the seed of UUID generator ?
-- breakingin
- 
+
 ## bytebanditctf2019
 - NotSoEasy
 - Lemonshell  
