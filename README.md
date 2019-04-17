@@ -12,9 +12,6 @@ seccomp
 ## wpictf2019
 - secureshell  
   what is the seed of UUID generator ?
-- Source pt2  
-    Why "LESSECURE=0" didn't works ?  
-    How to disable command in "less"
 - breakingin
  
 ## bytebanditctf2019
