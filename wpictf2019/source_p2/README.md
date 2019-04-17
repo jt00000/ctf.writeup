@@ -76,7 +76,7 @@ flag:WPI{Typos_are_GrEaT!}
 
 
 ## Part2
-Now we have source.c. Let's compile with gcc in native ubuntu18.04. # And I could't do this on time :((((
+Now we have source.c. Let's compile with gcc in native ubuntu18.04. # And I could't do this on time :((((  
 In this binary, there are no strigns like "/bin/sh" nor we have no write gadget like "mov [rax], rsi", so that we can't spawn shell.   
 There is "!" command in "less". By using this function, we can spawn shell. But "setenv("LESSSECURE", "1", 1);" prevents us from the shell.  
 
