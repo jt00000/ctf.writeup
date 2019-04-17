@@ -1,2 +1,0 @@
-FLAG_100{str!ngs_is_useful}
-FLAG_300{pyIn+f_wIth_InPut_s+R_1sd4n63roUS}
