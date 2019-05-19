@@ -3,13 +3,21 @@
  - favorite: PWN, REV
 
 # ToDo bins
+## harekazeCTF2019
+- ramen
+debu
+- login
+"format" injection?
+## defcon2019
+- babyheap
+tcache
 ## ASIS2019
-- pwn101
+- pwn101  
 tcache??
 - silkroad
 
 ## hack-zonectf2019
-- pwn2
+- pwn2  
 where to rop?
 - pwn3
 - shellcoding
@@ -25,7 +33,8 @@ seccomp chall
 
 ## Swampctf2019
 - Bad file  
-    What is IO_FILE??
+    What is IO_FILE??  
+    wait for ubuntu16
 
 ## Plaidctf2019
 - Plaid Party Planning III  
