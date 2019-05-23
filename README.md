@@ -1,16 +1,22 @@
 # CTF.Writeup
- - my ctf writeups
  - favorite: PWN, REV
 
 # ToDo bins
+## securityfest2019
+- brainfuck64  
+gonna be my first kernel 
+
 ## harekazeCTF2019
 - ramen
-debu
 - login
-"format" injection?
+
 ## defcon2019
 - babyheap
 tcache
+
+## TSGCTF
+- ssb
+
 ## ASIS2019
 - pwn101  
 tcache??
@@ -27,8 +33,6 @@ seccomp
 - NotSoEasy
 - Lemonshell  
 seccomp chall
-- tudutudututu2  
-    how to leak libc ?
 - hardmalloc
 
 ## Swampctf2019
