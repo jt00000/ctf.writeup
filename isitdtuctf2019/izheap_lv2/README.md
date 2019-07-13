@@ -7,7 +7,7 @@ add, edit, delete, showが使えるメモ帳的なもの。アドレスと、サ
 addおよびeditのデータ入力にoff by oneがある。
 
 ## 方針検討
-heapのoff by oneは、次のチャンクサイズが0x100以上であれば、prev in useビットをクリアすることができる。  
+heapのoff by oneは、次のチャンクサイズが0x100以上であれば、prev inuseビットをクリアすることができる。  
 heapのfdを触れないのでdupは作れない。chunkの中には特に有用な情報もない。
 libc-は2.27であるため、tcacheがある。
 大きくfreeするとarenaアドレスは出るが、削除が適切なためアドレスが残らず、参照できない。
@@ -30,8 +30,8 @@ gotは書けないので、gotからのleakが終わったら、heapのhookを�
 - 0x100のサイズを超えるチャンクを確保し、freeできる
 - 直前のチャンクにoff by oneがある
 - (多分)targetとなるアドレスの値が非０である
-![test](/2019-07-13_15-31.png)
-![test](/2019-07-13_15-32.png)
+![test](isitdtuctf2019/izheap_lv2/2019-07-13_15-31.png)
+![test](isitdtuctf2019/izheap_lv2/2019-07-13_15-32.png)
 
 
 
