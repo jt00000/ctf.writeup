@@ -5,17 +5,13 @@
 ## securityfest2019
 - brainfuck64  
 gonna be my first kernel 
-
+- baby6  
+arm bin
+- halleb3rry  
+hard to leak
 ## harekazeCTF2019
 - ramen
 - login
-
-## defcon2019
-- babyheap
-tcache
-
-## TSGCTF
-- ssb
 
 ## ASIS2019
 - pwn101  
