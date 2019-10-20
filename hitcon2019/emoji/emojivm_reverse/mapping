@@ -1,0 +1,36 @@
+0x01, 0x1f233, 🈳, nop
+0x02, 0x02795, ➕, [reg-1] = [reg]+[reg-1]; reg = reg - 1
+0x03, 0x02796, ➖, [reg-1] = [reg]-[reg-1]; reg = reg - 1
+0x04, 0x0274c, ❌, [reg-1] = [reg]*[reg-1]; reg = reg - 1
+0x05, 0x02753, ❓, [reg-1] = [reg]%[reg-1]; reg = reg - 1
+0x06, 0x0274e, ❎, [reg-1] = [reg]^[reg-1]; reg = reg - 1
+0x07, 0x1f46b, 👫, [reg-1] = [reg]&[reg-1]; reg = reg - 1
+0x08, 0x1f480, 💀, if [reg] < [reg-1] then [reg-1]=1 else [reg-1]=0;reg = reg - 1
+0x09, 0x1f4af, 💯, if [reg] == [reg-1] then [reg-1]=1 else [reg-1]=0;reg = reg - 1 
+0x0a, 0x1f680, 🚀, jmp to reg
+0x0b, 0x1f236, 🈶, if [reg-1] == 0 then reg = reg-2 else ip = reg, reg = reg-2
+0x0c, 0x1f21a, 🈚, if [reg-1] == 0 then ip = reg, reg = reg-2 else reg = reg-2 
+0x0d, 0x023ec, ⏬, reg+1 = ip+1; ip+=2
+0x0e, 0x1f51d, 🔝, reg-=1
+0x0f, 0x1f4e4, 📤, [reg+1] = buf[[reg]][reg-1]; reg+=1
+0x10, 0x1f4e5, 📥, buf[[reg]][reg-1] = [reg-2]; reg-=3
+0x11, 0x1f195, 🆕, malloc([reg]); reg-=1
+0x12, 0x1f193, 🆓, free([reg]); reg-=1
+0x13, 0x1f4c4, 📄, read(0, reg, len(reg)); reg-=1
+0x14, 0x1f4dd, 📝, write(1, reg, len(reg)); reg-=1
+0x15, 0x1f521, 🔡, copy???
+0x16, 0x1f522, 🔢, printf(reg);???
+0x17, 0x1f6d1, 🛑, exit()
+
+0x00, 0x1f600, 😀
+0x01, 0x1f601, 😁
+0x02, 0x1f602, 😂
+0x03, 0x1f923, 🤣
+0x04, 0x1f61c, 😜
+0x05, 0x1f604, 😄
+0x06, 0x1f605, 😅
+0x07, 0x1f606, 😆
+0x08, 0x1f609, 😉
+0x09, 0x1f60a, 😊
+0x0a, 0x1f60d, 😍
+
