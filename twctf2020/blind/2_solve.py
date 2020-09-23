@@ -1,3 +1,4 @@
+# i couldnt solve this on time
 from pwn import *
 context.log_level = 'debug'
 context.arch = 'amd64'
