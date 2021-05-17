@@ -1,4 +1,4 @@
-# hadvm (3kCTF2021 / pwn)
+# handvm (3kCTF2021 / pwn)
 I wrote 1 pwn task "handvm" for 3kCTF2021 and this is writeup.
 
 ## Exploit Summery
