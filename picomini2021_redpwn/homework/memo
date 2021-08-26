@@ -1,0 +1,36 @@
+board size: 0x32 x 0x16
+
+opcode
+
+# math
+0x25: mod
+0x2a: mul
+0x2b: add
+0x2d: sub
+0x2f: div
+
+# display
+0x2e: print
+0x2c: putchar
+
+# direction
+0x3c: left 
+0x3e: right
+0x5e: up
+0x76: down
+
+# conditions 
+0x21: sete / sn >= 1 / stack[sn-1] = stack[sn-1] == 0
+0x5f: cond LR ( if zero -> right )
+0x60: setlow 
+0x7c: cond UD ( if zero -> down )
+
+# util
+0x24: pop to void
+0x30: push zero / sn <= 99 / stack[sn] = 0; sn++
+0x3a: copy
+0x40: ret
+0x5c: swap / / stack[sn-1] ^=stack[sn-2]; stack[sn-2] ^=stack[sn-1]; stack[sn-1] ^= stack[sn-2]
+
+0x67: pick board(x, y) value
+0x70: replace board(x, y) value
