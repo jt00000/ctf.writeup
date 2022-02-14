@@ -1,3 +1,5 @@
+// original writeup: https://mem2019.github.io/jekyll/update/2022/02/06/DiceCTF-Memory-Hole.html
+
 var buf = new ArrayBuffer(8);
 var f64 = new Float64Array(buf);
 var i64 = new BigInt64Array(buf);
