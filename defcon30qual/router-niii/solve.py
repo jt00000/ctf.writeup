@@ -2,7 +2,7 @@
 from pwn import *
 import ctypes
 LIBC = ctypes.cdll.LoadLibrary('/lib/x86_64-linux-gnu/libc.so.6')
-context.log_level = 'debug'
+#context.log_level = 'debug'
 context.arch = 'amd64'
 context.terminal = ['tmux', 'split-window', '-h']
 
@@ -44,7 +44,7 @@ def get_seed():
 #seed = get_seed()
 
 # for testing
-seed = 0x313337
+seed = 1111111111
 
 r = start(seed)
 if args.D:
@@ -80,7 +80,6 @@ payload = [0xaa] *0x1000
 
 cnt = 0
 def check_cnt():
-	return 
 	global cnt
 	global dups
 	if ips[cnt] in dups:
