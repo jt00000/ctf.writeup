@@ -77,8 +77,7 @@ For Safe-Linking, We can restore heap address with just 1 leak.
 - First free chunk->fd will be 0x000111222444 ( = (1st_free_chunk >> 12) )
 - After first chunk, free chunk->fd will be 0x111333666XXX ( = (NEXT_free_chunk >> 12) ^ (PREV_free_chunk))
  Case 1. If we can get 1st value, just shift it.
- Case 2. If we get both 1st and 2nd value, just xor it. ( This needs 2 leaks to restore )
- Case 3. If we get only 2nd value, we can still restore heap address with multiple xor.
+ Case 2. If we get only after 1st value, we can still restore heap address with multiple xor.
   Let v0 = 0x111, v1 = 0x222, v2 = 0x444, 2nd_value = 0x111333666XXX
     0x111 = v0
     0x333 = 0x111 ^ 0x222 = v0 ^ v1
